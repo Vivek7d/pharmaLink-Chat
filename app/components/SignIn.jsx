@@ -5,6 +5,7 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const style = {
   wrapper: `flex justify-center`,
+  button: `bg-black text-white px-4 py-2 rounded hover:bg-gray-300`,
 };
 
 const googleSignIn = async () => {
@@ -19,7 +20,9 @@ const googleSignIn = async () => {
 const SignIn = () => {
   return (
     <div className={style.wrapper}>
-      <GoogleButton onClick={googleSignIn} />
+      <button className={style.button} onClick={googleSignIn}>
+        Sign In
+      </button>
     </div>
   );
 };
