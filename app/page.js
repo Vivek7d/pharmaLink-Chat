@@ -1,8 +1,8 @@
-'use client'
+"use client";
 import Image from "next/image";
 import Navbar from "./components/Navbar";
-import { auth } from './firebase';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from "../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 import Chat from "./components/Chat";
 const style = {
   appContainer: `max-w-[728px] mx-auto text-center`,
@@ -13,12 +13,12 @@ export default function Home() {
   return (
     <div className="">
       <div className={style.appContainer}>
-      <section className='{style.sectionContainer}'>
-        {/* Navbar */}
-        <Navbar />
-        {user ? <Chat /> : null}
-      </section>
-    </div>
+        <section className="{style.sectionContainer}">
+          {/* Navbar */}
+          <Navbar />
+          {user ? <Chat /> : null}
+        </section>
+      </div>
     </div>
   );
 }

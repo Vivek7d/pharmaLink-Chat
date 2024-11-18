@@ -1,6 +1,6 @@
 import React from "react";
 import GoogleButton from "react-google-button";
-import { auth } from "../firebase";
+import { auth } from "../../firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const style = {
@@ -12,7 +12,7 @@ const googleSignIn = async () => {
   try {
     await signInWithPopup(auth, provider);
   } catch (error) {
-    console.error("Error signing in: ", error);
+    console.error("Error signing in: ", error.message, error.code, error);
   }
 };
 

@@ -1,9 +1,9 @@
-'use client'
-import React, { useState, useEffect, useRef } from 'react';
-import Message from './Message';
-import SendMessage from './SendMessage';
-import { db } from '../firebase';
-import { query, collection, orderBy, onSnapshot } from 'firebase/firestore';
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import Message from "./Message";
+import SendMessage from "./SendMessage";
+import { db } from "../../firebase";
+import { query, collection, orderBy, onSnapshot } from "firebase/firestore";
 
 const style = {
   main: `flex flex-col p-[10px]`,
@@ -14,7 +14,7 @@ const Chat = () => {
   const scroll = useRef();
 
   useEffect(() => {
-    const q = query(collection(db, 'messages'), orderBy('timestamp'));
+    const q = query(collection(db, "messages"), orderBy("timestamp"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let messages = [];
       querySnapshot.forEach((doc) => {
